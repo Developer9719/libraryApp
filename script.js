@@ -31,13 +31,14 @@ addBookToArray('Black Water', 'DJ MacHale');
 
 
 // Display books 
-const displayElement = document.getElementsByClassName('currentInventory')[0];
+const displayElement = document.getElementsByTagName('tbody')[0];
 // The [0] selects the first element in the HTML Collection
 
 function displayBooks(book) {
     console.log(book.name);
-    displayElement.insertAdjacentHTML("beforeend",`<div class="book">${book.title} 
-        by ${book.author}</div>`);
+    displayElement.insertAdjacentHTML("beforeend",`<tr><td class="book">${book.title}</td>
+        <td class="book">${book.author}</td></tr>`);
+
 }
 
 books.forEach(displayBooks);
