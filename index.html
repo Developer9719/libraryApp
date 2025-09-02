@@ -11,29 +11,39 @@
         <h1>Welcome to the Library</h1>
     </header>
     <main>
-        <div class="currentInventory">
-            <h2>Current Inventory: </h2>
-            <form action="" method="post">
-                <label for="title">Book Title: </label>
-                <input type="text" name="title">
+        <div class="mainGrid">
+            <div class="newBook">
+                <form action="" method="post">
+                    <label for="title">Book Title: </label>
+                    <input type="text" name="title"><br>
 
-                <label for="author">Book Author: </label>
-                <input type="text" name="author">
+                    <label for="author">Book Author: </label>
+                    <input type="text" name="author">
 
-                <button type="submit">Add New Book</button>
-            </form><br>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Book Title</th>
-                        <th>Book Author</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
+                    <button type="submit">Add New Book</button>
+                </form><br>
+            </div>
+            <div class="currentInventory">
+            <!-- This leaves 2 empty grid cells which is not
+             best practice -->
+                <div></div>
+                <div>
+                    <h2>Current Inventory: </h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Book Title</th>
+                                <th>Book Author</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div></div>
+            </div>
         </div>
+        
     </main>
     <footer>
         <p>&copy; 2025 Library App</p>
