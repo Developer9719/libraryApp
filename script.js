@@ -37,7 +37,8 @@ const displayElement = document.getElementsByTagName('tbody')[0];
 function displayBooks(book) {
     console.log(book.name);
     displayElement.insertAdjacentHTML("beforeend",`<tr><td class="book">${book.title}</td>
-        <td class="book">${book.author}</td></tr>`);
+        <td class="book">${book.author}</td><td><button>Edit</button></td><td>
+        <button>Delete</button></td></tr>`);
 
 }
 
