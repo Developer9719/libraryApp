@@ -1,6 +1,7 @@
 const books = []; // Array of book objects
 const displayElement = document.getElementsByTagName('tbody')[0];
 // The [0] selects the first element in the HTML Collection
+let iteration = -1;
 
 function Book(title, author) { // Book object constructor
     // Uses the variable passed in as the instance variable
@@ -33,10 +34,10 @@ addBookToArray('Sylo', 'DJ MacHale');
 addBookToArray('Black Water', 'DJ MacHale');
 
 function displayBooks(book) {
-    console.log(book.name);
-    displayElement.insertAdjacentHTML("beforeend",`<tr><td class="book">${book.title}</td>
-        <td class="book">${book.author}</td><td><button>Edit</button></td><td>
-        <button>Delete</button></td></tr>`);
+    iteration++;
+    displayElement.insertAdjacentHTML("beforeend",`<tr id="${iteration}"><td class="book">${book.title}</td>
+        <td class="book">${book.author}</td><td><button id="editBook">Edit</button></td><td>
+        <button id="deleteBook">Delete</button></td></tr>`);
 
 }
 
@@ -63,6 +64,19 @@ const form = document.getElementById('newBookForm').addEventListener('submit', f
         alert('Please enter a book author');
         return;
     }
+
+    // Edit Action
+    const editBook = document.getElementById('editBook');
+
+
+
+    // Delete Action
+    const deleteBook = document.getElementById('deleteBook');    
+    deleteBook.addEventListener('click', function(event)) {
+        /* Give each element an ID number dynamically 
+        Target the ID to delete the entry*/
+    }
+
 
   addBookToArray(bookTitle, bookAuthor);
 });
