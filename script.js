@@ -78,5 +78,21 @@ function deleteBook(id) {
 }
 
 function editBook(id) {
+    const book = books[id];
+    const newTitle = prompt('Enter new title:', book.title);
+    const newAuthor = prompt('Enter new author:', book.author);
 
+    if (newTitle !== null && newTitle.trim() !== '') {
+        book.title = newTitle.trim();
+    }
+    if (newAuthor !== null && newAuthor.trim() !== '') {
+        book.author = newAuthor.trim();
+    }
+
+    //.trim() removes whitespace from both ends of a string
+
+    // Update display
+    displayElement.innerHTML = '';
+    iteration = -1;
+    books.forEach(displayBooks);
 }
