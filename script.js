@@ -36,8 +36,8 @@ addBookToArray('Black Water', 'DJ MacHale');
 function displayBooks(book) {
     iteration++;
     displayElement.insertAdjacentHTML("beforeend",`<tr id="${iteration}"><td class="book">${book.title}</td>
-        <td class="book">${book.author}</td><td><button id="editBook">Edit</button></td><td>
-        <button id="deleteBook">Delete</button></td></tr>`);
+        <td class="book">${book.author}</td><td><button onclick="editBook(${iteration})">Edit</button></td><td>
+        <button onclick="deleteBook(${iteration})">Delete</button></td></tr>`);
 
 }
 
@@ -65,18 +65,18 @@ const form = document.getElementById('newBookForm').addEventListener('submit', f
         return;
     }
 
-    // Edit Action
-    const editBook = document.getElementById('editBook');
-
-
-
-    // Delete Action
-    const deleteBook = document.getElementById('deleteBook');    
-    deleteBook.addEventListener('click', function(event)) {
-        /* Give each element an ID number dynamically 
-        Target the ID to delete the entry*/
-    }
-
-
   addBookToArray(bookTitle, bookAuthor);
 });
+
+function deleteBook(id) { 
+    books.splice(id, 1); // Removes book from array
+    document.getElementById(id).remove(); // Removes book from display
+    // Rebuild display to update IDs
+    displayElement.innerHTML = '';
+    iteration = -1;
+    books.forEach(displayBooks);
+}
+
+function editBook(id) {
+
+}
